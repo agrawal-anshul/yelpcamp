@@ -1,4 +1,4 @@
-var express = require("express"),
+const express = require("express"),
     app = express(),
     bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
@@ -10,14 +10,19 @@ var express = require("express"),
     Comment = require("./models/comment"),
     User = require("./models/user"),
     seedDB = require("./seeds");
+const fs = require("fs");
+const path = require("path");
+const multer = require("multer");
+require("dotenv").config();
 
 // requiring routes
-var commentRoutes = require("./routes/comments"),
-    campgroundRoutes = require("./routes/campgrounds"),
-    indexRoutes = require("./routes/index");
+const indexRoutes = require("./routes/index");
 
-var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp_v12";
-mongoose.connect(url);
+const commentRoutes = require("./routes/comments");
+const campgroundRoutes = require("./routes/campgrounds");
+const adRoute = require("./routes/ads");
+const url = process.env.DATABASE_URL;
+mongoose.connect(url, { useMongoClient: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
@@ -50,7 +55,10 @@ app.use(function (req, res, next) {
 app.use("/", indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/ads", adRoute);
 
-app.listen(process.env.PORT || 3000, process.env.IP, function () {
-    console.log("The YelpCamp Server Has Started!");
+app.listen(process.env.PORT, process.env.IP, function () {
+    console.log(
+        "The YelpCamp Server Has Started on Port " + process.env.PORT + "!"
+    );
 });

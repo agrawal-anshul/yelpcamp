@@ -1,0 +1,8 @@
+<div class="col-md-2">
+    <%var image=items[Math.floor(Math.random()*items.length)];%>
+    <div class="container">
+        <img
+            src="data:image/<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>"
+        />
+    </div>
+</div>

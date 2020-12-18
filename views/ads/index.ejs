@@ -1,0 +1,53 @@
+<% include ../partials/header %>
+<div class="container-fluid">
+    <div class="row">
+        <!-- <div class="col-2">
+            <div>
+                <% items.forEach(function(image) { %>
+                <div class="container">
+                    <img
+                        src="data:image/<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>"
+                    />
+                    <div class="row">
+                        <div class="col-md-2"><h5><%= image.name %></h5></div>
+                        <div class="col-md-10"><p><%= image.desc %></p></div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div> -->
+
+        <div class="col-8">
+            <div class="jumbotron">
+                <h1>Ads on server Demo</h1>
+            </div>
+        </div>
+
+        <div class="col-2">
+            <!-- <div>
+                <% items.forEach(function(image) { %>
+                <div class="container">
+                    <img
+                        src="data:image/<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>"
+                    />
+                    <div class="row">
+                        <div class="col-md-2"><h5><%= image.name %></h5></div>
+                        <div class="col-md-10"><p><%= image.desc %></p></div>
+                    </div>
+                </div>
+                <% }) %>
+            </div> -->
+
+            <!-- <%const arr=[1,2,3,4,5]%>  -->
+            <%var image=items[Math.floor(Math.random()*items.length)];%>
+            <div class="container">
+                <img
+                    src="data:image/<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>"
+                />
+            </div>
+
+            <% %>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer %>
