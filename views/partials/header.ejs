@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>YelpCamp</title>
+        <title>aDVENTURE</title>
+        <script src="https://use.fontawesome.com/2d83255d39.js"></script>
         <link
             rel="stylesheet"
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -15,7 +16,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/campgrounds">YelpCamp</a>
+                    <a class="navbar-brand" href="/campgrounds">aDVENTURE</a>
                 </div>
 
                 <button
@@ -43,6 +44,10 @@
                             <a class="nav-link" href="/register">Sign Up</a>
                         </li>
                         <% } else { %>
+                        <a class="nav-link" href="/ads/new"
+                            >Advertise with us!</a
+                        >
+                        <li class="nav-item"></li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"
                                 >Signed In As <%= currentUser.username %></a

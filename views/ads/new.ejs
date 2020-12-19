@@ -1,25 +1,25 @@
 <% include ../partials/header %>
     <div class="container">
         <div class="row">
-            <h1>To Upload Image on mongoDB</h1>
+            <h1>Submit your Advertisements to us</h1>
             <hr />
             <div>
                 <form action="/ads" method="POST" enctype="multipart/form-data">
                     <div class="form-group">
-                        <label for="name">Image Title</label>
+                        <label for="name">Ad Title</label>
                         <input
     
                             type="text"
                             class="form-control"
                             id="name"
-                            placeholder="Name"
+                            placeholder="Title"
                             value=""
                             name="name"
                             required
                         />
                     </div>
                     <div class="form-group">
-                        <label for="desc">Image Description</label>
+                        <label for="desc">Ad Description</label>
                         <textarea
                         class="form-control"
                             id="desc"
@@ -32,11 +32,11 @@
                         </textarea>
                     </div>
                     <div class="form-group">
-                        <label for="image">Upload Image</label>
+                        <label for="image">Upload Ad</label>
                         <input type="file" class="form-control-file" id="image" name="image" required />
                     </div>
                     <div>
-                        <button type="submit">Submit</button>
+                        <button class="btn btn-success" type="submit">Submit</button>
                     </div>
                 </form>
             </div>

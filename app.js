@@ -59,6 +59,6 @@ app.use("/ads", adRoute);
 
 app.listen(process.env.PORT, process.env.IP, function () {
     console.log(
-        "The YelpCamp Server Has Started on Port " + process.env.PORT + "!"
+        "The aDVENTURE Server Has Started on Port " + process.env.PORT + "!"
     );
 });
