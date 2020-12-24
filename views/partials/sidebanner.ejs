@@ -1,8 +1,16 @@
-<div class="col-md-2">
-    <%var image=items[Math.floor(Math.random()*items.length)];%>
-    <div class="container">
-        <img
-            src="data:image/<%=image.img.contentType%>;base64,<%=image.img.data.toString('base64')%>"
-        />
-    </div>
-</div>
+<div style="cursor: pointer" class="fill" id="<%=id%>"></div>
+
+<script>
+    async function getapi(url) {
+        const response = await fetch(url);
+        var data = await response.json();
+        console.log(data);
+
+        // creating img tag below
+        const x = document.createElement("img");
+        x.src = data.image;
+        x.alt = "advertisement";
+        document.querySelector("#" + "<%=id%>").append(x);
+    }
+    getapi("http://localhost:3001/ads");
+</script>

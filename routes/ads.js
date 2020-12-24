@@ -75,7 +75,7 @@ router.post("/", upload.single("image"), (req, res, next) => {
             console.log(err);
         } else {
             // item.save();
-            res.redirect("/ads");
+            res.redirect("/campgrounds");
         }
     });
 });

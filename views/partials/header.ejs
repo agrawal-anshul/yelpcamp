@@ -10,13 +10,21 @@
             crossorigin="anonymous"
         />
         <link rel="stylesheet" href="/stylesheets/main.css" />
+        <link rel="stylesheet" href="/stylesheets/login.css" />
+        <!-- font awesome -->
+        <script
+            src="https://kit.fontawesome.com/d17828823b.js"
+            crossorigin="anonymous"
+        ></script>
     </head>
     <body>
         <!-- header section starts -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/campgrounds">aDVENTURE</a>
+                    <a class="navbar-brand" href="/campgrounds">
+                        <i class="fas fa-campground"></i>aDVENTURE</a
+                    >
                 </div>
 
                 <button
@@ -38,23 +46,31 @@
                     <ul class="nav navbar-nav ml-auto">
                         <% if(!currentUser){ %>
                         <li class="nav-item">
-                            <a class="nav-link" href="/login">Login</a>
+                            <a class="nav-link" href="/login"
+                                ><i class="fas fa-sign-in-alt"></i> Login</a
+                            >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/register">Sign Up</a>
+                            <a class="nav-link" href="/register"
+                                ><i class="fas fa-user-plus"></i> Sign Up</a
+                            >
                         </li>
                         <% } else { %>
                         <a class="nav-link" href="/ads/new"
-                            >Advertise with us!</a
+                            ><i class="fas fa-chart-line"></i> Advertise with
+                            us!</a
                         >
                         <li class="nav-item"></li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"
-                                >Signed In As <%= currentUser.username %></a
+                                ><i class="fas fa-user-circle"></i> Signed In As
+                                <%= currentUser.username %></a
                             >
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/logout">Logout</a>
+                            <a class="nav-link" href="/logout"
+                                ><i class="fas fa-sign-out-alt"></i> Logout</a
+                            >
                         </li>
                         <% } %>
                     </ul>

@@ -26,7 +26,7 @@ mongoose.connect(url, { useMongoClient: true });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
-app.use(express.static(__dirname + "/public"));
+app.use(express.static(__dirname + "/public")); //serves public directory automatically so use ./<folder name> for directories in public forlder
 app.use(methodOverride("_method"));
 app.use(flash());
 // seedDB(); seed the database

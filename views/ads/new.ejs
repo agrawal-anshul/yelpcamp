@@ -1,5 +1,5 @@
 <% include ../partials/header %>
-    <div class="container">
+<!-- <div class="container">
         <div class="row">
             <h1>Submit your Advertisements to us</h1>
             <hr />
@@ -45,5 +45,73 @@
         </div>
     </div>
     </body>
-</html>
+</html> -->
 
+<div class="container-fluid">
+    <div class="row no-gutter">
+        <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image-ad"></div>
+        <div class="col-md-8 col-lg-6">
+            <div class="login d-flex align-items-center py-5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-9 col-lg-8 mx-auto">
+                            <h3 class="login-heading mb-4">
+                                Submit your Advertisements to us
+                            </h3>
+                            <form
+                                action="/ads"
+                                method="POST"
+                                enctype="multipart/form-data"
+                            >
+                                <div class="form-label-group">
+                                    <input
+                                        class="form-control"
+                                        id="name"
+                                        type="text"
+                                        name="name"
+                                        placeholder="Ad Title"
+                                        required
+                                        autofocus
+                                    />
+                                    <label for="name">Ad Title</label>
+                                </div>
+
+                                <div class="form-label-group">
+                                    <input
+                                        class="form-control"
+                                        id="desc"
+                                        name="desc"
+                                        rows=""
+                                        placeholder="Description"
+                                        required
+                                    ></input>
+                                    <label for="desc">Ad Description</label>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="image">Upload Ad</label>
+                                    <input
+                                        type="file"
+                                        class="form-control-file"
+                                        id="image"
+                                        name="image"
+                                        required
+                                    />
+                                </div>
+
+                                <button
+                                    class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
+                                    type="submit"
+                                >
+                                    Submit
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>
